@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f5f8;
+  /* a little deadline panic in the background */
+  background-image: linear-gradient(#f3f5f870, #f3f5f870), url('./assets/todo-meme.png');
+  background-size: auto, 320px 320px;
+  background-repeat: repeat;
+  color: #253047;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 850px;
+  margin: 36px auto;
+  padding: 0 18px;
+}
+
+header {
+  margin-bottom: 26px;
+  padding: 20px 22px;
+  background: white;
+  border: 1px solid #dce2e9;
+  border-radius: 10px;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+
+.subtitle, .date {
+  color: #5c6879;
+  font-size: 14px;
+}
+
+.panel {
+  margin-bottom: 20px;
+  padding: 22px;
+  background: white;
+  border: 1px solid #dce2e9;
+  border-radius: 10px;
+}
+
+.statistics, .filters, .task-heading, .actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.statistics p {
+  flex: 1;
+  margin: 0;
+  padding: 12px;
+  background: #f3f5f8;
+  border-radius: 6px;
+}
+
+.statistics strong {
+  display: block;
+  font-size: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input, textarea, select, button {
+  font: inherit;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  border: 1px solid #aab5c4;
+  border-radius: 5px;
+  background: white;
+  color: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 9px 14px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: #285dcc;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.92);
+}
+
+:focus-visible {
+  outline: 3px solid #5784df;
+  outline-offset: 2px;
+}
+
+.secondary {
+  background: #e9edf3;
+  color: #253047;
+}
+
+.danger {
+  background: #fff0f0;
+  color: #a02424;
+  border-color: #efc4c4;
+}
+
+.filters > div {
+  flex: 1;
+  min-width: 150px;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.task {
+  padding: 18px;
+  margin-top: 14px;
+  border: 1px solid #dce2e9;
+  border-left: 4px solid #285dcc;
+  border-radius: 6px;
+}
+
+.task-heading {
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.status {
+  color: #435575;
+  font-size: 14px;
+}
+
+.description {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.completed {
+  background: #f5faf6;
+  border-left-color: #32834a;
+}
+
+.completed h3 {
+  text-decoration: line-through;
+}
+
+.priority-field {
+  max-width: 190px;
+}
+
+.error {
+  color: #a02424;
+}
+
+.empty {
+  margin: 16px 0 0;
+  color: #5c6879;
+}
+
+@media (max-width: 500px) {
+  .container {
+    margin-top: 20px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+}
