@@ -1,23 +1,4 @@
-# Dependencies
 node_modules/
-
-# Production output
 dist/
-
-# Local npm cache used in restricted environments
-.npm-cache/
-
-# Local environment files
-.env
-.env.*
-!.env.example
-
-# Editor and OS files
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
-
-# Logs
+.checks/
 *.log
-npm-debug.log*

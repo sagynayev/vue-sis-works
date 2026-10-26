@@ -1,36 +1,30 @@
-# Pulseboard
+﻿# sis 3
 
-Pulseboard is an editorial operations dashboard built from scratch with Vue 3. It uses the public [DummyJSON](https://dummyjson.com/) service through Axios and demonstrates authentication, protected and lazy-loaded routes, dynamic routing, loading/error states, and complete CRUD operations.
+simple post board on vue 3. posts come from jsonplaceholder through axios.
 
-## Demo credentials
+## start
 
-- Email: `editor@pulseboard.dev`
-- Password: `pulse2026`
-
-## Pages
-
-- Overview dashboard (`/`)
-- Story library with create, edit, and delete (`/stories`)
-- Dynamic story details (`/stories/:id`)
-- Contributor directory (`/people`)
-- About / project documentation (`/about`)
-- Custom 404 page (any unknown route)
-- Sign-in (`/login`)
-
-## Setup
-
-```bash
+```sh
 npm install
 npm run dev
 ```
 
-For a production build:
+open http://127.0.0.1:5174. to check the build, run `npm run build`.
 
-```bash
-npm run build
-npm run preview
-```
+## pages
 
-## API behavior
+- `/` home
+- `/posts` all posts and title search
+- `/posts/:id` one post
+- `/posts/new` new post
+- `/posts/:id/edit` edit post
+- `/login` demo login
+- anything else shows 404
 
-DummyJSON simulates POST, PUT, and DELETE requests but does not permanently mutate its server data. Pulseboard applies successful API responses to local state so CRUD changes are visible for the current session.
+the header stays on every page. creating, editing and deleting need login. any name and test email work; this is only a demo login.
+
+## api
+
+the app sends get, post, put and delete requests to [jsonplaceholder](https://jsonplaceholder.typicode.com/). that service fakes changes, so they disappear after a full reload. a post you just created can still be edited and deleted on the page, but those two actions are local because the new post does not exist on the server.
+
+`src/router.js` has the routes. `src/api.js` sets up axios. `src/posts.js` handles the post list. `src/auth.js` stores the demo login. page components are in `src/views`.
